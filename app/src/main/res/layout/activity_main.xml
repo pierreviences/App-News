@@ -55,6 +55,7 @@
                 />
 
             <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv_gambar"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:src="@drawable/ic_launcher_background"
@@ -91,6 +92,7 @@
                     android:textColor="#9E9CA8"
                     />
                 <TextView
+                    android:id="@+id/tv_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="10 Jan, 2021"
