@@ -5,4 +5,5 @@ import com.example.newsapi.data.reporistory.NewsRepository
 
 class NewsViewModel (private val newsRepository: NewsRepository) : ViewModel()  {
     fun getHeadlines() = newsRepository.getHeadlines()
+    fun getEverything() = newsRepository.getEverything()
 }

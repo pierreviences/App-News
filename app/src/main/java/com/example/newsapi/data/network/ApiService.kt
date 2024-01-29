@@ -18,6 +18,6 @@ interface ApiService {
         @Query("q") q: String = "startup",
         @Query("apiKey") latitude: String = "24041c195045423e970818245ff38913",
         @Query("page") page: Int = 1,
-        @Query("pageSize") pageSize: Int = 1,
+        @Query("pageSize") pageSize: Int = 20,
     ): NewsResponse
 }
