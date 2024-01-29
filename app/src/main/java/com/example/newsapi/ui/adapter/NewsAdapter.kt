@@ -1,5 +1,6 @@
 package com.example.newsapi.ui.adapter
 
+import android.content.Intent
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.example.newsapi.R
 import com.example.newsapi.data.model.ArticlesItem
 import com.example.newsapi.databinding.ItemNewsBinding
+import com.example.newsapi.ui.NewsWebviewActivity
 import com.example.newsapi.utils.convertDateFormat
 
 class NewsAdapter: ListAdapter<ArticlesItem, NewsAdapter.MyViewHolder>(DIFF_CALLBACK) {
@@ -29,12 +31,12 @@ class NewsAdapter: ListAdapter<ArticlesItem, NewsAdapter.MyViewHolder>(DIFF_CALL
             tvAuthor.text = data.author
             tvDate.text = data.publishedAt?.let { convertDateFormat(it) }
 
-//            itemView.setOnClickListener {
-//                val intent = Intent(itemView.context, DetailPedagangActivity::class.java).apply {
-//                    putExtra(DetailPedagangActivity.STORY_INTENT_DATA, data)
-//                }
-//                itemView.context.startActivity(intent)
-//            }
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, NewsWebviewActivity::class.java).apply {
+                    putExtra(NewsWebviewActivity.EXTRA_URL, data.url)
+                }
+                itemView.context.startActivity(intent)
+            }
         }
     }
 
